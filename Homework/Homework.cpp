@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <cmath>
+#include <algorithm>
 using namespace std;
 const double PI = 3.14;
 
@@ -82,7 +83,7 @@ void Homework_2() {
 
 
     cout << "Task_1\n";
-    double R, r, l, h, V;
+    double R, r, l, h;
     cout << "Enter the biggest radius(R) = ";
     cin >> R;
     cout << "Enter the second radius(r) = ";
@@ -96,6 +97,151 @@ void Homework_2() {
 
 
 
+    cout << "*********************************************\n";
+}
+int fact(int x) {
+    if (x == 1){
+        return 1;
+    }
+    else {
+        return x * fact(x - 1);
+    }
+   
+}
+
+void Test() {
+    cout << "*********************************************\nHomework_2\n";
+
+    cout << "Task_1\n";
+    int V, T;
+    cout << "Enter V ";
+    cin >> V;
+    cout << "Enter T ";
+    cin >> T;
+    cout << "S = " << V * T % 45<<"\n";
+
+    cout << "Task_2\n";
+    int x;
+    cout << "Enter x = ";
+    cin >> x;
+    cout << "Answer is " << x / 100<<"\n";
+
+    cout << "Task_3\n";
+    int S, D;
+    cout << "Enter D = ";
+    cin >> D;
+    cout << "Enter S = ";
+    cin >> S;
+    cout << "Answer is " << S / D << "\n";
+
+    cout << "Task_4\n";
+    int a;
+    cout << "Enter x = ";
+    cin >> x;
+    a = x % 100;
+    cout << "Answer is " << a/10 << "\n";
+
+    cout << "Task_5\n";
+    double x1, y1;
+    cout << "Enter x = ";
+    cin >> x1;
+    cout << "Enter y = ";
+    cin >> y1;
+    if ((y1 <= x1 or y1 <= -x1) and (y1 >= x1 * x1 - 2)) {
+        cout<<"YES\n";
+    }
+    else {
+        cout<<"NO\n";
+    }
+
+    cout << "Task_6\n";
+    int num;
+    while (true) {
+        cout << "\nEnter a number ";
+        cin >> num;
+        if (num == 0) {
+            break;
+        }
+        if (num % 3 == 0) {
+            cout<< num<<" is divided on 3\n";
+        }
+    }
+
+    cout << "Task_7\n";
+    int i =1, n = 5;
+    cout << "Enter x ";
+    cin >> x;
+    while(x > n) {
+        i++;
+        n = n + 2;
+    }
+    cout << i << "\n";
+
+    cout << "Task_8\n";
+    while (true) {
+        cout << "\nEnter a number ";
+        cin >> num;
+        if (num == 0) {
+            break;
+        }
+        if (num % 19 == 0) {
+            cout << num << " is divided on 19\n";
+        }
+    }
+
+    cout << "Task_9\n";
+    cout << "Enter x ";
+    cin >> x;
+    cout << "Factorial of x is " << fact(x) << "\n";
+
+
+    
+
+    cout << "Task 11\n";
+    int sum = 0;
+    cout << "\nEnter array's length ";
+    cin >> n;
+    int *arr = new int[n];
+    for (i = 0; i < n; i++) {
+        cout << "Enter array's element ";
+        cin >> arr[i];
+        if (arr[i] % 7 == 0) {
+            sum = sum + arr[i];
+        }
+    }cout << "sum = " << sum << "\n";
+
+
+    cout << "Task 12\n";
+    sum = 0;//В данной задаче max
+    cout << "\nEnter array's length ";
+    cin >> n;
+    int *arr1 = new int[n];
+    for (i = 0; i < n; i++) {
+        cout << "Enter array's element ";
+        cin >> arr1[i];
+        if (arr1[i] % 3 == 0 and arr1[i]>sum) {
+            sum = arr1[i];
+        }
+    }cout << "max = " << sum << "\n";
+
+    /*
+    cout << "Task 13\n";
+    int sum = 0; int m;
+    cout << "\nEnter array's length ";
+    cin >> n, m;
+    int** arr = new int*[n];
+    for (int count = 0; count < n; count++) {
+        arr[count] = new int[m];
+    }
+    */
+    
+    cout << "Task 14\n";
+    string str;
+    cout << "Enter string ";
+    cin >> str;
+    str.erase(remove(str.begin(), str.end(), '*'), str.end());
+    cout << str<<"\n";
+    
     cout << "*********************************************\n";
 }
 
@@ -136,6 +282,9 @@ int main()
         case 2:
             Homework_2();
             break;
+        case 10:
+            Test();
+            break;
         default:
             cout << "Homework does not exist. Try again\n";
             continue;
@@ -165,6 +314,7 @@ int main()
     }
     return 0; 
 }
+
 
 
 
