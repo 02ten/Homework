@@ -79,7 +79,22 @@ void Homework_1() {
 
 void Homework_2() {
     cout << "*********************************************\nHomework_2\n";
-    
+
+
+    cout << "Task_1\n";
+    double R, r, l, h, V;
+    cout << "Enter the biggest radius(R) = ";
+    cin >> R;
+    cout << "Enter the second radius(r) = ";
+    cin >> r;
+    cout << "Enter the truncated cone(l) = ";
+    cin >> l;
+    cout << "Enter the height(h) = ";
+    cin >> h;
+    cout << "V = " <<(PI * h*(R * R + R * r + r * r))/3<<"\n";
+    cout << "S = " << PI * (R * R + (R + r) * l + r * r)<<"\n";
+
+
 
     cout << "*********************************************\n";
 }
@@ -117,6 +132,9 @@ int main()
         switch (number) {
         case 1:
             Homework_1();
+            break;
+        case 2:
+            Homework_2();
             break;
         default:
             cout << "Homework does not exist. Try again\n";
