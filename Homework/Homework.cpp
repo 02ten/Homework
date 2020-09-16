@@ -93,8 +93,49 @@ void Homework_2() {
     cout << "Enter the height(h) = ";
     cin >> h;
     cout << "V = " <<(PI * h*(R * R + R * r + r * r))/3<<"\n";
-    cout << "S = " << PI * (R * R + (R + r) * l + r * r)<<"\n";
+    cout << "S = " << PI * (R * R + (R + r) * l + r * r)<<"\n\n";
 
+    cout << "Task_2\n";
+    double a, x;
+    cout << "Enter a ";
+    cin >> a;
+    cout << "Enter x ";
+    cin >> x;
+    if (abs(x) < 1) {
+        cout << "W =" << a * log(abs(x)) << "\n\n";
+    }
+    else {
+        cout << "W =" << sqrt(a-x*x) << "\n\n";
+    }
+
+
+    cout << "Task_3\n";
+    double b, y;
+    cout << "Enter b ";
+    cin >> b;
+    cout << "Enter y ";
+    cin >> y;
+    cout << "Enter x ";
+    cin >> x;
+    cout << "Z =" << log(b-y)*sqrt(b-x) << "\n\n";
+
+
+    cout << "Task_4\n";
+    int n;
+    cout << "Enter n ";
+    cin >> n;
+    for (n; n < n + 10; n++) {
+        cout <<n<<" ";
+    }
+    cout << "\n\n";
+
+
+    cout << "Task_5\n";
+    x = -4;
+    while (x != 4.5) {
+        cout << "If x = " << x << " Then y = " << (x * x - 2 * x + 2) / (x - 1);
+        x = x + 0.5;
+    }
 
 
     cout << "*********************************************\n";
