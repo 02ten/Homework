@@ -204,7 +204,8 @@ void Homework_3() {
     }
     in.close();
     cout << "\n\n";
-    
+
+    /*
     cout << "Task_4\n";
     int op;
     ifstream in1("C:\\Users\\IVC1-5\\Desktop\\Example.txt");
@@ -219,6 +220,33 @@ void Homework_3() {
     } while (!in1.eof());
     in1.close();
     cout << "\n\n";
+    */
+    cout << "Task_4\n";
+    ifstream in1("C:\\Users\\IVC1-5\\Desktop\\Example.txt");
+    char ch;
+    while (!in1.eof()) {
+        in1 >> ch;
+        if (ch >= '0' && ch <='9') {
+            cout << ch;
+        }
+    }
+    cout << "\n\n";
+
+    cout << "Task_5\n";
+    string line1;
+    cin >> line1;
+    char temp;
+    for (int i = 0; i < 29; i++) {
+        for (int j = 0; j < 30 - i - 1; j++) {
+            if (line1[j] > line1[j + 1]) {
+                // меняем элементы местами
+                temp = line1[j];
+                line1[j] = line1[j + 1];
+                line1[j + 1] = temp;
+            }
+        }
+    }
+        cout << line1<<"\n\n";
 }
 
 
