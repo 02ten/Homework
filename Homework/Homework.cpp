@@ -3,7 +3,9 @@
 
 #include <iostream>
 #include <cmath>
+#include <fstream>
 #include <algorithm>
+#include <string>
 using namespace std;
 const double PI = 3.14;
 
@@ -77,7 +79,6 @@ void Homework_1() {
 
     cout << "*********************************************\n";
 }
-
 void Homework_2() {
     cout << "*********************************************\nHomework_2\n";
 
@@ -122,10 +123,20 @@ void Homework_2() {
 
     cout << "Task_4\n";
     int n;
-    cout << "Enter n ";
-    cin >> n;
-    for (n; n < n + 10; n++) {
-        cout <<n<<" ";
+    while (true) {
+        cout << "Enter n ";
+        cin >> n;
+        if (n < 0) {
+            cout << "Incorrect value. Try again \n";
+        }
+        else {
+            break;
+        }
+    }
+    
+    for (int i = n ; i < n + 10; i++) {
+        cout <<i<<" ";
+        
     }
     cout << "\n\n";
 
@@ -133,13 +144,84 @@ void Homework_2() {
     cout << "Task_5\n";
     x = -4;
     while (x != 4.5) {
-        cout << "If x = " << x << " Then y = " << (x * x - 2 * x + 2) / (x - 1);
+        if (x == 1) {
+            cout << "Cannot divide by zero\n";
+        }
+        else {
+            cout << "If x = " << x << " Then y = " << (x * x - 2 * x + 2) / (x - 1) << "\n";
+        }
         x = x + 0.5;
     }
-
+    cout << "\n\n";
 
     cout << "*********************************************\n";
 }
+
+
+void Homework_3() {
+    cout << "*********************************************\nHomework_2\n";
+
+    cout << "Task_1\n";
+    double s, p, n,r,m;
+    cout << "Enter s ";
+    cin >> s;
+    cout << "Enter p ";
+    cin >> p;
+    cout << "Enter n ";
+    cin >> n;
+    r = p / 100;
+    cout << "m = " << (s * r * pow(1 + r, n)) / (12 * (pow(1 + r, n) - 1))<<"\n\n";
+
+    cout << "Task_2\n";
+    s = 0; p = 0; n = 0; r = 0;
+    double d = 9999999999999; double i_1;
+    cout << "Enter s ";
+    cin >> s;
+    cout << "Enter m ";
+    cin >> m;
+    cout << "Enter n ";
+    cin >> n;
+    for (double i = 0; i < 1000; i = i + 0.001) {
+        r = i / 100;
+        if (abs(m - (s * r * pow(1 + r, n)) / (12 * (pow(1 + r, n) - 1)))<d) {
+            d = abs(m - (s * r * pow(1 + r, n)) / (12 * (pow(1 + r, n) - 1)));
+            i_1 = i;
+        }
+
+    }
+    cout<<"p = " << i_1<<"\n\n";
+
+    cout << "Task_3\n";
+    string line;
+    ifstream in("C:\\Users\\IVC1-5\\Desktop\\Example.txt");
+    if (in.is_open())
+    {
+        cout << "File is open\n";
+        while (getline(in, line))
+        {
+            cout << line << endl;
+        }
+    }
+    in.close();
+    cout << "\n\n";
+    
+    cout << "Task_4\n";
+    int op;
+    ifstream in1("C:\\Users\\IVC1-5\\Desktop\\Example.txt");
+    do {
+        if (in1 >> op) {
+            cout << op << " ";
+        }
+        else {
+            in1.clear();
+            in1.ignore(1, ' ');
+        }
+    } while (!in1.eof());
+    in1.close();
+    cout << "\n\n";
+}
+
+
 int fact(int x) {
     if (x == 1){
         return 1;
@@ -149,7 +231,6 @@ int fact(int x) {
     }
    
 }
-
 void Test() {
     cout << "*********************************************\nHomework_2\n";
 
@@ -286,6 +367,7 @@ void Test() {
     cout << "*********************************************\n";
 }
 
+
 int main()
 {
     bool isWorking;
@@ -322,6 +404,9 @@ int main()
             break;
         case 2:
             Homework_2();
+            break;
+        case 3:
+            Homework_3();
             break;
         case 10:
             Test();
